@@ -26,7 +26,7 @@ class Writer(Node):
     def listener_callback(self, msg):
         
         current_date = datetime.now()
-        with open(self.file, 'w') as f:
+        with open(self.file, 'a') as f:
             writer = csv.writer(f)
             writer.writerow([current_date.isoformat(),msg.data])
         
